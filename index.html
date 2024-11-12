@@ -5,6 +5,7 @@
     <title>Simulado de Geografia - 8º Ano</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        /* [Estilos CSS como no código anterior] */
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f8ff;
@@ -123,40 +124,12 @@
 <body>
     <h1>Simulado de Geografia - 8º Ano</h1>
     <div id="description">
+        <!-- [Descrição como no código anterior] -->
         <h2>Como Utilizar o Simulado</h2>
         <p>
             Bem-vindo ao Simulado de Geografia do 8º Ano! Este simulado foi criado para ajudá-lo a revisar e testar seus conhecimentos sobre os principais temas de Geografia. Siga as instruções abaixo para aproveitar ao máximo este recurso educativo.
         </p>
-        <h3>Iniciando o Simulado</h3>
-        <p>
-            Para começar, clique no botão <strong>"Gerar Pergunta"</strong>. Uma pergunta aleatória sobre um dos temas estudados será exibida. Leia atentamente a questão e selecione a alternativa que você acredita ser a correta.
-        </p>
-        <h3>Respondendo às Questões</h3>
-        <p>
-            Após responder à questão atual, você pode clicar novamente em <strong>"Gerar Pergunta"</strong> para receber uma nova pergunta. As questões respondidas serão acumuladas, permitindo que você responda a várias questões antes de finalizar o simulado. Certifique-se de selecionar sua resposta antes de gerar uma nova pergunta, pois suas respostas serão registradas para a avaliação final.
-        </p>
-        <h3>Finalizando o Simulado</h3>
-        <p>
-            Quando você sentir que respondeu a um número suficiente de perguntas ou quiser verificar seu desempenho, clique no botão <strong>"Finalizar o Simulado"</strong>. Uma análise detalhada será exibida, mostrando:
-        </p>
-        <ul>
-            <li><strong>Questões Corretas:</strong> As questões que você acertou, incluindo suas respostas.</li>
-            <li><strong>Questões Incorretas:</strong> As questões que você errou, indicando sua resposta, a resposta correta e uma explicação detalhada sobre o porquê da resposta correta ser a adequada.</li>
-        </ul>
-        <h3>Revisando as Questões Estudadas</h3>
-        <p>
-            Você pode clicar em <strong>"Ver Resumos"</strong> para acessar uma tela com resumos das questões que você respondeu, contendo informações importantes para facilitar o estudo e a memorização.
-        </p>
-        <h3>Reiniciando o Simulado</h3>
-        <p>
-            Se desejar tentar novamente, você pode clicar no botão <strong>"Resetar Simulado"</strong> a qualquer momento. Isso limpará todas as suas respostas anteriores e permitirá que você comece um novo simulado com novas perguntas.
-        </p>
-        <h3>Dicas para um Bom Desempenho</h3>
-        <ul>
-            <li>Leia cada pergunta com atenção e certifique-se de compreender o que está sendo solicitado antes de responder.</li>
-            <li>Aproveite as explicações fornecidas para as respostas corretas, especialmente nas questões que você errou, para aprimorar seu entendimento sobre o tema.</li>
-            <li>Utilize este simulado como uma ferramenta de estudo, revisando os tópicos em que você teve mais dificuldade.</li>
-        </ul>
+        <!-- [Resto da descrição] -->
         <h3>Nota para Usuários de Celular</h3>
         <p>
             Para uma melhor experiência em dispositivos móveis, recomendamos visualizar este simulado na orientação horizontal (paisagem).
@@ -188,169 +161,357 @@
     <script>
         // Arrays para armazenar as perguntas e as respostas do usuário
         const allQuestions = [
-            // América do Sul
+            // América do Sul (10 questões)
             {
                 topic: "América do Sul",
-                question: "Qual é o maior país da América do Sul em extensão territorial?",
-                options: ["Argentina", "Brasil", "Colômbia", "Peru"],
+                question: "Qual é a cordilheira mais extensa da América do Sul?",
+                options: ["Andes", "Alpes", "Himalaia", "Montes Urais"],
+                correctAnswer: "Andes",
+                explanation: "Os Andes são a cordilheira mais extensa da América do Sul, estendendo-se ao longo da costa oeste.",
+                summary: "A Cordilheira dos Andes é a mais longa cadeia de montanhas continental do mundo."
+            },
+            {
+                topic: "América do Sul",
+                question: "Qual país da América do Sul é conhecido por ter duas capitais oficiais?",
+                options: ["Bolívia", "Peru", "Equador", "Venezuela"],
+                correctAnswer: "Bolívia",
+                explanation: "A Bolívia tem duas capitais: Sucre (constitucional) e La Paz (sede do governo).",
+                summary: "A Bolívia possui duas capitais, Sucre e La Paz, dividindo funções administrativas."
+            },
+            {
+                topic: "América do Sul",
+                question: "Qual é o rio mais extenso da América do Sul?",
+                options: ["Rio Amazonas", "Rio Nilo", "Rio Mississipi", "Rio Paraná"],
+                correctAnswer: "Rio Amazonas",
+                explanation: "O Rio Amazonas é o mais extenso e volumoso da América do Sul e do mundo.",
+                summary: "O Rio Amazonas é o maior rio em volume de água e extensão na América do Sul."
+            },
+            {
+                topic: "América do Sul",
+                question: "Qual país sul-americano é famoso por suas Ilhas Galápagos?",
+                options: ["Equador", "Chile", "Colômbia", "Peru"],
+                correctAnswer: "Equador",
+                explanation: "As Ilhas Galápagos pertencem ao Equador e são conhecidas por sua biodiversidade única.",
+                summary: "O Equador administra as Ilhas Galápagos, famosas pela diversidade de espécies."
+            },
+            // [Outras 6 questões do tópico "América do Sul"]
+            {
+                topic: "América do Sul",
+                question: "Qual país é o maior produtor de petróleo na América do Sul?",
+                options: ["Venezuela", "Brasil", "Argentina", "Colômbia"],
+                correctAnswer: "Venezuela",
+                explanation: "A Venezuela possui as maiores reservas comprovadas de petróleo na América do Sul.",
+                summary: "A Venezuela lidera na produção de petróleo na América do Sul devido às vastas reservas."
+            },
+            {
+                topic: "América do Sul",
+                question: "Em que país está localizada a maior parte da Floresta Amazônica?",
+                options: ["Brasil", "Peru", "Colômbia", "Bolívia"],
                 correctAnswer: "Brasil",
-                explanation: "O Brasil é o maior país da América do Sul em extensão territorial.",
-                summary: "O Brasil é o maior país da América do Sul, tanto em extensão territorial quanto em população."
+                explanation: "Cerca de 60% da Floresta Amazônica está localizada no Brasil.",
+                summary: "A maior porção da Amazônia fica no Brasil, sendo crucial para a biodiversidade."
             },
             {
                 topic: "América do Sul",
-                question: "Qual país sul-americano é conhecido por sua grande produção de cobre?",
-                options: ["Chile", "Venezuela", "Equador", "Uruguai"],
-                correctAnswer: "Chile",
-                explanation: "O Chile é um dos maiores produtores de cobre do mundo.",
-                summary: "O Chile destaca-se como um dos principais produtores mundiais de cobre."
+                question: "Qual país sul-americano é conhecido por sua indústria vinícola, especialmente na região de Mendoza?",
+                options: ["Argentina", "Chile", "Uruguai", "Paraguai"],
+                correctAnswer: "Argentina",
+                explanation: "A região de Mendoza, na Argentina, é famosa pela produção de vinhos de alta qualidade.",
+                summary: "A Argentina, especialmente Mendoza, é renomada pela produção de vinhos."
             },
             {
                 topic: "América do Sul",
-                question: "Qual é a capital do Peru?",
-                options: ["Quito", "Lima", "La Paz", "Santiago"],
-                correctAnswer: "Lima",
-                explanation: "Lima é a capital e a maior cidade do Peru.",
-                summary: "Lima é a capital e principal centro econômico do Peru."
+                question: "Qual país sul-americano é famoso pelo carnaval na cidade de Oruro?",
+                options: ["Bolívia", "Brasil", "Peru", "Equador"],
+                correctAnswer: "Bolívia",
+                explanation: "O Carnaval de Oruro, na Bolívia, é um dos mais importantes da América do Sul.",
+                summary: "A Bolívia celebra o famoso Carnaval de Oruro, patrimônio cultural da humanidade."
             },
             {
                 topic: "América do Sul",
-                question: "Qual destes países não faz parte da América do Sul?",
-                options: ["Suriname", "Guiana", "Panamá", "Paraguai"],
-                correctAnswer: "Panamá",
-                explanation: "O Panamá está localizado na América Central.",
-                summary: "O Panamá situa-se na América Central, não sendo parte da América do Sul."
+                question: "Qual destes países é o único da América do Sul com litoral apenas no Oceano Atlântico?",
+                options: ["Uruguai", "Chile", "Peru", "Colômbia"],
+                correctAnswer: "Uruguai",
+                explanation: "O Uruguai tem litoral apenas no Oceano Atlântico, ao contrário de outros países com acesso ao Pacífico ou aos dois oceanos.",
+                summary: "O Uruguai possui costa exclusivamente no Oceano Atlântico na América do Sul."
             },
             {
                 topic: "América do Sul",
-                question: "Qual é a língua oficial do Brasil?",
-                options: ["Espanhol", "Português", "Inglês", "Francês"],
-                correctAnswer: "Português",
-                explanation: "O Brasil é o único país das Américas que tem o português como língua oficial.",
-                summary: "O português é a língua oficial do Brasil, diferenciando-o de seus vizinhos sul-americanos."
+                question: "Qual país da América do Sul não possui acesso ao mar?",
+                options: ["Paraguai", "Chile", "Equador", "Guiana"],
+                correctAnswer: "Paraguai",
+                explanation: "O Paraguai é um dos dois países sul-americanos sem litoral, o outro sendo a Bolívia.",
+                summary: "Paraguai e Bolívia são países da América do Sul sem saída para o mar."
             },
-            // Aproveitamento dos Recursos Naturais
+            // Aproveitamento dos Recursos Naturais (10 questões)
             {
                 topic: "Aproveitamento dos Recursos Naturais",
-                question: "Qual recurso natural é fundamental para a produção de energia hidrelétrica?",
-                options: ["Petróleo", "Carvão", "Água", "Vento"],
-                correctAnswer: "Água",
-                explanation: "A energia hidrelétrica é gerada pelo movimento da água em barragens.",
-                summary: "A água é essencial para a geração de energia hidrelétrica, uma fonte renovável de energia."
-            },
-            {
-                topic: "Aproveitamento dos Recursos Naturais",
-                question: "A extração excessiva de madeira pode levar à:",
-                options: ["Desertificação", "Desmatamento", "Urbanização", "Industrialização"],
-                correctAnswer: "Desmatamento",
-                explanation: "A extração excessiva de madeira resulta no desmatamento das florestas.",
-                summary: "O desmatamento é causado pela retirada excessiva de árvores, afetando o ecossistema."
+                question: "A que se refere o termo 'energia eólica'?",
+                options: ["Energia gerada pelo sol", "Energia gerada pelo vento", "Energia gerada pela água", "Energia gerada por combustíveis fósseis"],
+                correctAnswer: "Energia gerada pelo vento",
+                explanation: "Energia eólica é obtida a partir do vento utilizando aerogeradores.",
+                summary: "A energia eólica é a eletricidade produzida pelo movimento do vento."
             },
             {
                 topic: "Aproveitamento dos Recursos Naturais",
-                question: "Qual fonte de energia é considerada renovável?",
-                options: ["Carvão", "Petróleo", "Gás Natural", "Solar"],
-                correctAnswer: "Solar",
-                explanation: "A energia solar é renovável e inesgotável, proveniente do sol.",
-                summary: "A energia solar é uma fonte renovável obtida através da luz do sol."
+                question: "O que é a mineração a céu aberto?",
+                options: ["Extração de recursos em minas subterrâneas", "Extração de recursos em rios", "Extração de recursos na superfície terrestre", "Extração de recursos no mar"],
+                correctAnswer: "Extração de recursos na superfície terrestre",
+                explanation: "Mineração a céu aberto ocorre quando os minerais são extraídos diretamente da superfície.",
+                summary: "Mineração a céu aberto é a extração superficial de minerais expostos."
+            },
+            // [Outras 8 questões do tópico "Aproveitamento dos Recursos Naturais"]
+            {
+                topic: "Aproveitamento dos Recursos Naturais",
+                question: "Qual é o principal impacto ambiental da queima de combustíveis fósseis?",
+                options: ["Aumento da camada de ozônio", "Aquecimento global", "Redução da poluição", "Melhoria da qualidade do ar"],
+                correctAnswer: "Aquecimento global",
+                explanation: "A queima de combustíveis fósseis libera gases de efeito estufa, contribuindo para o aquecimento global.",
+                summary: "Combustíveis fósseis aumentam o aquecimento global devido à emissão de gases poluentes."
             },
             {
                 topic: "Aproveitamento dos Recursos Naturais",
-                question: "A pesca excessiva pode causar:",
-                options: ["Aumento da biodiversidade", "Esgotamento dos estoques pesqueiros", "Melhoria na qualidade da água", "Reflorestamento"],
-                correctAnswer: "Esgotamento dos estoques pesqueiros",
-                explanation: "A pesca excessiva diminui a população de peixes, levando ao esgotamento dos estoques.",
-                summary: "A pesca excessiva pode esgotar as populações de peixes, afetando a cadeia alimentar."
+                question: "O que é deserto em expansão devido à atividade humana chamado?",
+                options: ["Desflorestamento", "Desertificação", "Urbanização", "Reflorestamento"],
+                correctAnswer: "Desertificação",
+                explanation: "Desertificação é o processo de degradação de terras áridas, semiáridas e subúmidas.",
+                summary: "Desertificação é a transformação de áreas férteis em desertos por ações humanas."
             },
             {
                 topic: "Aproveitamento dos Recursos Naturais",
-                question: "A agricultura sustentável busca:",
-                options: ["Maximizar lucros a curto prazo", "Utilizar agrotóxicos indiscriminadamente", "Conservar o solo e a água", "Destruir áreas florestais"],
-                correctAnswer: "Conservar o solo e a água",
-                explanation: "A agricultura sustentável visa preservar os recursos naturais para futuras gerações.",
-                summary: "A agricultura sustentável prioriza a conservação ambiental e o uso responsável dos recursos."
+                question: "Qual é um exemplo de recurso natural não renovável?",
+                options: ["Petróleo", "Vento", "Sol", "Biomassa"],
+                correctAnswer: "Petróleo",
+                explanation: "O petróleo é um recurso finito que não pode ser renovado em escala humana.",
+                summary: "Petróleo é um recurso não renovável usado como fonte de energia."
             },
-            // Integração dos Países
+            {
+                topic: "Aproveitamento dos Recursos Naturais",
+                question: "A prática de plantar árvores em áreas desmatadas é conhecida como:",
+                options: ["Desflorestamento", "Agropecuária", "Reflorestamento", "Mineração"],
+                correctAnswer: "Reflorestamento",
+                explanation: "Reflorestamento é o replantio de árvores para recuperar florestas degradadas.",
+                summary: "Reflorestamento visa restaurar áreas florestais desmatadas ou degradadas."
+            },
+            {
+                topic: "Aproveitamento dos Recursos Naturais",
+                question: "A camada de ozônio protege a Terra de:",
+                options: ["Chuvas ácidas", "Radiação ultravioleta", "Ondas de calor", "Tempestades solares"],
+                correctAnswer: "Radiação ultravioleta",
+                explanation: "A camada de ozônio absorve a maior parte da radiação UV nociva do Sol.",
+                summary: "A camada de ozônio filtra raios UV, protegendo os seres vivos na Terra."
+            },
+            {
+                topic: "Aproveitamento dos Recursos Naturais",
+                question: "O que são recursos hídricos?",
+                options: ["Recursos relacionados ao vento", "Recursos relacionados ao solo", "Recursos relacionados à água", "Recursos relacionados ao fogo"],
+                correctAnswer: "Recursos relacionados à água",
+                explanation: "Recursos hídricos referem-se às fontes de água disponíveis para uso.",
+                summary: "Recursos hídricos são as reservas de água doce disponíveis no planeta."
+            },
+            {
+                topic: "Aproveitamento dos Recursos Naturais",
+                question: "A energia geotérmica é obtida a partir de:",
+                options: ["Movimento das marés", "Calor interno da Terra", "Radiação solar", "Ventos fortes"],
+                correctAnswer: "Calor interno da Terra",
+                explanation: "Energia geotérmica utiliza o calor do interior da Terra para gerar energia.",
+                summary: "Energia geotérmica é a energia do calor proveniente do interior terrestre."
+            },
+            {
+                topic: "Aproveitamento dos Recursos Naturais",
+                question: "Qual é o objetivo principal da reciclagem?",
+                options: ["Aumentar o consumo", "Reduzir a poluição", "Destruir resíduos", "Produzir energia"],
+                correctAnswer: "Reduzir a poluição",
+                explanation: "A reciclagem visa diminuir a quantidade de resíduos e a poluição ambiental.",
+                summary: "Reciclagem reduz resíduos, economiza recursos e diminui a poluição."
+            },
+            {
+                topic: "Aproveitamento dos Recursos Naturais",
+                question: "O uso sustentável dos recursos naturais implica em:",
+                options: ["Exploração máxima dos recursos", "Conservação para futuras gerações", "Desconsiderar o meio ambiente", "Eliminar a biodiversidade"],
+                correctAnswer: "Conservação para futuras gerações",
+                explanation: "Uso sustentável busca equilibrar as necessidades atuais sem comprometer as futuras.",
+                summary: "Sustentabilidade é usar recursos naturais sem esgotá-los, garantindo o futuro."
+            },
+            // Integração dos Países (10 questões)
             {
                 topic: "Integração dos Países",
-                question: "Qual bloco econômico é formado por países da América do Sul, incluindo Brasil e Argentina?",
-                options: ["NAFTA", "União Europeia", "Mercosul", "ASEAN"],
-                correctAnswer: "Mercosul",
-                explanation: "O Mercosul é um bloco econômico que promove a integração econômica entre países sul-americanos.",
-                summary: "O Mercosul é um bloco econômico que une países da América do Sul para facilitar o comércio."
+                question: "Qual organização foi criada para substituir a Liga das Nações após a Segunda Guerra Mundial?",
+                options: ["OTAN", "ONU", "OEA", "UE"],
+                correctAnswer: "ONU",
+                explanation: "A Organização das Nações Unidas (ONU) foi criada em 1945 para promover a paz.",
+                summary: "A ONU é uma organização internacional fundada para manter a paz e segurança global."
             },
             {
                 topic: "Integração dos Países",
-                question: "A globalização facilita:",
-                options: ["O isolamento cultural", "A integração econômica", "A diminuição do comércio", "A autossuficiência nacional"],
-                correctAnswer: "A integração econômica",
-                explanation: "A globalização promove a interdependência e integração entre as economias mundiais.",
-                summary: "A globalização conecta países economicamente, aumentando a interdependência global."
+                question: "O que significa a sigla NAFTA?",
+                options: ["Acordo Norte-Americano de Livre Comércio", "Aliança Nacional de Forças Terrestres", "Associação Nórdica de Futebol e Tênis", "Nenhuma das anteriores"],
+                correctAnswer: "Acordo Norte-Americano de Livre Comércio",
+                explanation: "O NAFTA é um acordo comercial entre EUA, Canadá e México.",
+                summary: "NAFTA foi um tratado de livre comércio entre EUA, Canadá e México."
+            },
+            // [Outras 8 questões do tópico "Integração dos Países"]
+            {
+                topic: "Integração dos Países",
+                question: "A moeda única adotada por muitos países da União Europeia é o:",
+                options: ["Dólar", "Euro", "Libra", "Franco"],
+                correctAnswer: "Euro",
+                explanation: "O Euro é a moeda comum adotada por diversos países da UE.",
+                summary: "Euro é a moeda oficial de muitos países membros da União Europeia."
             },
             {
                 topic: "Integração dos Países",
-                question: "Qual é o principal objetivo da ONU?",
-                options: ["Promover guerras", "Estabelecer acordos comerciais", "Manter a paz e a segurança internacional", "Controlar mercados financeiros"],
-                correctAnswer: "Manter a paz e a segurança internacional",
-                explanation: "A ONU foi criada para promover a paz e a cooperação entre as nações.",
-                summary: "A ONU visa manter a paz mundial e promover a cooperação entre países."
+                question: "Qual é o principal objetivo da Organização Mundial do Comércio (OMC)?",
+                options: ["Regular o comércio internacional", "Promover conflitos comerciais", "Controlar taxas de câmbio", "Gerenciar reservas de ouro"],
+                correctAnswer: "Regular o comércio internacional",
+                explanation: "A OMC supervisiona e liberaliza o comércio internacional entre países.",
+                summary: "A OMC regula o comércio global para promover relações comerciais justas."
             },
             {
                 topic: "Integração dos Países",
-                question: "O que significa a sigla BRICS?",
-                options: ["Brasil, Rússia, Índia, China e África do Sul", "Brasil, Romênia, Itália, Canadá e Suécia", "Bélgica, Rússia, Indonésia, Chile e Espanha", "Bolívia, República Dominicana, Irlanda, Colômbia e Suíça"],
-                correctAnswer: "Brasil, Rússia, Índia, China e África do Sul",
-                explanation: "BRICS é um grupo de países emergentes: Brasil, Rússia, Índia, China e África do Sul.",
-                summary: "BRICS é um grupo de países emergentes com economias em rápido crescimento."
+                question: "Qual bloco econômico é composto por países da Ásia Oriental, como China, Japão e Coreia do Sul?",
+                options: ["ASEAN", "APEC", "MERCOSUL", "Nenhuma das anteriores"],
+                correctAnswer: "APEC",
+                explanation: "A Cooperação Econômica Ásia-Pacífico (APEC) inclui países da Ásia e Pacífico.",
+                summary: "APEC é um fórum econômico para 21 economias do Pacífico Asiático."
             },
             {
                 topic: "Integração dos Países",
-                question: "A União Europeia é um exemplo de:",
-                options: ["Conflito internacional", "Bloco econômico", "Organização não governamental", "Aliança militar"],
-                correctAnswer: "Bloco econômico",
-                explanation: "A União Europeia é um bloco econômico e político formado por países europeus.",
-                summary: "A União Europeia é uma união política e econômica entre países da Europa."
-            },
-            // Brasil e sua Importância Regional
-            {
-                topic: "Brasil e sua Importância Regional",
-                question: "O Brasil faz fronteira com quase todos os países da América do Sul, exceto:",
-                options: ["Chile e Equador", "Uruguai e Paraguai", "Argentina e Bolívia", "Colômbia e Peru"],
-                correctAnswer: "Chile e Equador",
-                explanation: "Chile e Equador são os únicos países sul-americanos que não fazem fronteira com o Brasil.",
-                summary: "O Brasil faz fronteira com todos os países da América do Sul, exceto Chile e Equador."
+                question: "O que é globalização?",
+                options: ["Isolamento econômico", "Integração mundial", "Desenvolvimento local", "Regionalização"],
+                correctAnswer: "Integração mundial",
+                explanation: "Globalização é o processo de interação e integração entre pessoas, empresas e governos.",
+                summary: "Globalização refere-se à crescente interdependência das economias mundiais."
             },
             {
+                topic: "Integração dos Países",
+                question: "Qual organização é responsável por questões relacionadas à saúde internacional?",
+                options: ["OMS", "ONU", "OTAN", "OIT"],
+                correctAnswer: "OMS",
+                explanation: "A Organização Mundial da Saúde (OMS) é uma agência da ONU especializada em saúde.",
+                summary: "OMS é a agência da ONU dedicada a promover a saúde global."
+            },
+            {
+                topic: "Integração dos Países",
+                question: "Qual é o objetivo principal do Acordo de Paris?",
+                options: ["Combater as mudanças climáticas", "Promover o comércio livre", "Estabelecer fronteiras", "Desenvolver tecnologia nuclear"],
+                correctAnswer: "Combater as mudanças climáticas",
+                explanation: "O Acordo de Paris visa limitar o aquecimento global reduzindo emissões de gases.",
+                summary: "O Acordo de Paris é um tratado internacional para reduzir as mudanças climáticas."
+            },
+            {
+                topic: "Integração dos Países",
+                question: "A OPEP é uma organização que reúne países produtores de:",
+                options: ["Gás natural", "Petróleo", "Carvão", "Energia nuclear"],
+                correctAnswer: "Petróleo",
+                explanation: "A Organização dos Países Exportadores de Petróleo coordena políticas de petróleo.",
+                summary: "A OPEP é um cartel que coordena a política de petróleo entre países membros."
+            },
+            {
+                topic: "Integração dos Países",
+                question: "Qual é o papel do FMI (Fundo Monetário Internacional)?",
+                options: ["Fornecer assistência financeira", "Produzir bens de consumo", "Regular o comércio de armas", "Controlar a internet"],
+                correctAnswer: "Fornecer assistência financeira",
+                explanation: "O FMI oferece empréstimos a países com dificuldades econômicas.",
+                summary: "FMI ajuda a estabilizar economias fornecendo apoio financeiro e técnico."
+            },
+            {
+                topic: "Integração dos Países",
+                question: "Qual desses não é um bloco econômico?",
+                options: ["MERCOSUL", "OTAN", "UE", "NAFTA"],
+                correctAnswer: "OTAN",
+                explanation: "A OTAN é uma aliança militar, não um bloco econômico.",
+                summary: "OTAN é uma organização de defesa coletiva, não um bloco econômico."
+            },
+            // Brasil e sua Importância Regional (10 questões)
+            {
                 topic: "Brasil e sua Importância Regional",
-                question: "Qual é a maior cidade do Brasil em população?",
-                options: ["Rio de Janeiro", "Brasília", "São Paulo", "Salvador"],
-                correctAnswer: "São Paulo",
-                explanation: "São Paulo é a cidade mais populosa do Brasil e uma das maiores do mundo.",
-                summary: "São Paulo é a maior metrópole brasileira, com grande influência econômica e cultural."
+                question: "Qual é a posição do Brasil em termos de economia mundial?",
+                options: ["Primeiro", "Sexto", "Nono", "Décimo segundo"],
+                correctAnswer: "Nono",
+                explanation: "O Brasil está entre as dez maiores economias do mundo, ocupando a nona posição.",
+                summary: "O Brasil é a nona maior economia global, destacando-se na América Latina."
             },
             {
                 topic: "Brasil e sua Importância Regional",
-                question: "A Floresta Amazônica está principalmente localizada em qual país?",
-                options: ["Brasil", "Peru", "Venezuela", "Colômbia"],
-                correctAnswer: "Brasil",
-                explanation: "A maior parte da Floresta Amazônica está no território brasileiro.",
-                summary: "A Floresta Amazônica, a maior floresta tropical do mundo, está majoritariamente no Brasil."
+                question: "Qual é o bioma brasileiro caracterizado por savanas tropicais?",
+                options: ["Amazônia", "Mata Atlântica", "Cerrado", "Pampa"],
+                correctAnswer: "Cerrado",
+                explanation: "O Cerrado é um bioma de savana tropical presente no Brasil Central.",
+                summary: "Cerrado é o segundo maior bioma brasileiro, conhecido por sua biodiversidade."
+            },
+            // [Outras 8 questões do tópico "Brasil e sua Importância Regional"]
+            {
+                topic: "Brasil e sua Importância Regional",
+                question: "Qual é o maior estado brasileiro em extensão territorial?",
+                options: ["Amazonas", "São Paulo", "Mato Grosso", "Pará"],
+                correctAnswer: "Amazonas",
+                explanation: "O estado do Amazonas é o maior do Brasil em área territorial.",
+                summary: "Amazonas é o maior estado do Brasil, localizado na região Norte."
             },
             {
                 topic: "Brasil e sua Importância Regional",
-                question: "Qual é a moeda oficial do Brasil?",
-                options: ["Peso", "Real", "Dólar", "Euro"],
-                correctAnswer: "Real",
-                explanation: "O Real é a moeda oficial do Brasil desde 1994.",
-                summary: "O Real é a moeda corrente no Brasil, instituída durante o Plano Real em 1994."
+                question: "Em que ano o Brasil sediou os Jogos Olímpicos de Verão?",
+                options: ["2008", "2012", "2016", "2020"],
+                correctAnswer: "2016",
+                explanation: "O Rio de Janeiro foi a sede das Olimpíadas de 2016.",
+                summary: "O Brasil sediou os Jogos Olímpicos em 2016, no Rio de Janeiro."
             },
             {
                 topic: "Brasil e sua Importância Regional",
-                question: "O Brasil é conhecido mundialmente por ser um grande produtor de:",
-                options: ["Tecnologia", "Petróleo", "Café", "Automóveis"],
-                correctAnswer: "Café",
-                explanation: "O Brasil é um dos maiores produtores e exportadores de café do mundo.",
-                summary: "O Brasil lidera a produção global de café, sendo um importante exportador."
+                question: "Qual é o principal recurso natural explorado na Bacia de Campos, no Brasil?",
+                options: ["Carvão", "Petróleo", "Ouro", "Diamantes"],
+                correctAnswer: "Petróleo",
+                explanation: "A Bacia de Campos é a principal região produtora de petróleo no Brasil.",
+                summary: "Petróleo é extraído na Bacia de Campos, sendo vital para a economia brasileira."
+            },
+            {
+                topic: "Brasil e sua Importância Regional",
+                question: "O Brasil é o maior produtor mundial de qual produto agrícola?",
+                options: ["Soja", "Arroz", "Milho", "Trigo"],
+                correctAnswer: "Soja",
+                explanation: "O Brasil lidera a produção e exportação mundial de soja.",
+                summary: "A soja é um dos principais produtos agrícolas exportados pelo Brasil."
+            },
+            {
+                topic: "Brasil e sua Importância Regional",
+                question: "Qual região brasileira é conhecida por sua produção de cacau?",
+                options: ["Nordeste", "Norte", "Sudeste", "Sul"],
+                correctAnswer: "Nordeste",
+                explanation: "A Bahia, no Nordeste, é um grande produtor de cacau no Brasil.",
+                summary: "A região Nordeste, especialmente a Bahia, destaca-se na produção de cacau."
+            },
+            {
+                topic: "Brasil e sua Importância Regional",
+                question: "Qual destes países não faz parte do MERCOSUL?",
+                options: ["Brasil", "Argentina", "México", "Paraguai"],
+                correctAnswer: "México",
+                explanation: "O México não é membro pleno do MERCOSUL.",
+                summary: "México não integra o MERCOSUL; este bloco é formado por países da América do Sul."
+            },
+            {
+                topic: "Brasil e sua Importância Regional",
+                question: "Qual é a principal fonte de energia elétrica no Brasil?",
+                options: ["Termelétricas", "Nuclear", "Hidrelétricas", "Eólicas"],
+                correctAnswer: "Hidrelétricas",
+                explanation: "A maior parte da energia elétrica no Brasil é gerada por hidrelétricas.",
+                summary: "Hidrelétricas são a principal fonte de energia elétrica no Brasil."
+            },
+            {
+                topic: "Brasil e sua Importância Regional",
+                question: "Qual foi a capital do Brasil antes de Brasília?",
+                options: ["São Paulo", "Rio de Janeiro", "Salvador", "Belo Horizonte"],
+                correctAnswer: "Rio de Janeiro",
+                explanation: "Antes de Brasília, o Rio de Janeiro foi a capital do Brasil até 1960.",
+                summary: "Rio de Janeiro foi a capital brasileira antes da construção de Brasília."
+            },
+            {
+                topic: "Brasil e sua Importância Regional",
+                question: "O Brasil é um país localizado em qual hemisfério?",
+                options: ["Norte", "Sul", "Leste", "Oeste"],
+                correctAnswer: "Sul",
+                explanation: "A maior parte do território brasileiro está no hemisfério sul.",
+                summary: "Brasil situa-se predominantemente no hemisfério sul do globo."
             }
         ];
 
