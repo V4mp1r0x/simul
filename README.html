@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Simulado de Geografia - 8º Ano</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #2e8b57;
+        }
+        #description {
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: left;
+            font-size: 18px;
+            color: #333;
+        }
+        #description h2, #description h3 {
+            color: #2e8b57;
+        }
+        #description ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        #question-container, #summary-screen, #results {
+            margin: 20px auto;
+            max-width: 600px;
+            text-align: left;
+            display: none;
+        }
+        .question {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .options input {
+            margin-right: 10px;
+        }
+        #buttons {
+            margin: 20px;
+        }
+        button {
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            margin: 5px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #3cb371;
+        }
+        .back-button {
+            background-color: #555;
+        }
+        .back-button:hover {
+            background-color: #777;
+        }
+        #results {
+            text-align: left;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .explanation {
+            margin-left: 20px;
+        }
+        #footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #555;
+        }
+        @media screen and (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            button {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Simulado de Geografia - 8º Ano</h1>
+    <div id="description">
+        <h2>Como Utilizar o Simulado</h2>
+        <p>
+            Bem-vindo ao Simulado de Geografia do 8º Ano! Este simulado foi criado para ajudá-lo a revisar e testar seus conhecimentos sobre os principais temas de Geografia. Siga as instruções abaixo para aproveitar ao máximo este recurso educativo.
+        </p>
+        <h3>Iniciando o Simulado</h3>
+        <p>
+            Para começar, clique no botão <strong>"Gerar Pergunta"</strong>. Uma pergunta aleatória sobre um dos temas estudados será exibida. Leia atentamente a questão e selecione a alternativa que você acredita ser a correta.
+        </p>
+        <h3>Respondendo às Questões</h3>
+        <p>
+            Após responder à questão atual, você pode clicar novamente em <strong>"Gerar Pergunta"</strong> para receber uma nova pergunta. As questões respondidas serão acumuladas, permitindo que você responda a várias questões antes de finalizar o simulado. Certifique-se de selecionar sua resposta antes de gerar uma nova pergunta, pois suas respostas serão registradas para a avaliação final.
+        </p>
+        <h3>Finalizando o Simulado</h3>
+        <p>
+            Quando você sentir que respondeu a um número suficiente de perguntas ou quiser verificar seu desempenho, clique no botão <strong>"Finalizar o Simulado"</strong>. Uma análise detalhada será exibida, mostrando:
+        </p>
+        <ul>
+            <li><strong>Questões Corretas:</strong> As questões que você acertou, incluindo suas respostas.</li>
+            <li><strong>Questões Incorretas:</strong> As questões que você errou, indicando sua resposta, a resposta correta e uma explicação detalhada sobre o porquê da resposta correta ser a adequada.</li>
+        </ul>
+        <h3>Revisando as Questões Estudadas</h3>
+        <p>
+            Você pode clicar em <strong>"Ver Resumos"</strong> para acessar uma tela com resumos das questões que você respondeu, contendo informações importantes para facilitar o estudo e a memorização.
+        </p>
+        <h3>Reiniciando o Simulado</h3>
+        <p>
+            Se desejar tentar novamente, você pode clicar no botão <strong>"Resetar Simulado"</strong> a qualquer momento. Isso limpará todas as suas respostas anteriores e permitirá que você comece um novo simulado com novas perguntas.
+        </p>
+        <h3>Dicas para um Bom Desempenho</h3>
+        <ul>
+            <li>Leia cada pergunta com atenção e certifique-se de compreender o que está sendo solicitado antes de responder.</li>
+            <li>Aproveite as explicações fornecidas para as respostas corretas, especialmente nas questões que você errou, para aprimorar seu entendimento sobre o tema.</li>
+            <li>Utilize este simulado como uma ferramenta de estudo, revisando os tópicos em que você teve mais dificuldade.</li>
+        </ul>
+        <p>
+            Esperamos que este simulado seja útil em seus estudos. Boa sorte!
+        </p>
+    </div>
+    <div id="question-container">
+        <div id="question-area"></div>
+    </div>
+    <div id="buttons">
+        <button id="generate-btn">Gerar Pergunta</button>
+        <button id="finish-btn">Finalizar o Simulado</button>
+        <button id="summary-btn">Ver Resumos</button>
+        <button id="reset-btn">Resetar Simulado</button>
+    </div>
+    <div id="results"></div>
+    <div id="summary-screen">
+        <h2>Resumos para Estudo</h2>
+        <div id="summary-content"></div>
+        <button id="back-btn" class="back-button">Voltar</button>
+    </div>
+
+    <div id="footer">
+        <p>Este site foi criado por Guilherme Paz.</p>
+    </div>
+
+    <script>
+        // Arrays para armazenar as perguntas e as respostas do usuário
+        const allQuestions = [
+            // América do Sul
+            {
+                topic: "América do Sul",
+                question: "Qual é o maior país da América do Sul em extensão territorial?",
+                options: ["Argentina", "Brasil", "Colômbia", "Peru"],
+                correctAnswer: "Brasil",
+                explanation: "O Brasil é o maior país da América do Sul em extensão territorial.",
+                summary: "O Brasil é o maior país da América do Sul, tanto em extensão territorial quanto em população."
+            },
+            {
+                topic: "América do Sul",
+                question: "Qual país sul-americano é conhecido por sua grande produção de cobre?",
+                options: ["Chile", "Venezuela", "Equador", "Uruguai"],
+                correctAnswer: "Chile",
+                explanation: "O Chile é um dos maiores produtores de cobre do mundo.",
+                summary: "O Chile destaca-se como um dos principais produtores mundiais de cobre."
+            },
+            {
+                topic: "América do Sul",
+                question: "Qual é a capital do Peru?",
+                options: ["Quito", "Lima", "La Paz", "Santiago"],
+                correctAnswer: "Lima",
+                explanation: "Lima é a capital e a maior cidade do Peru.",
+                summary: "Lima é a capital e principal centro econômico do Peru."
+            },
+            {
+                topic: "América do Sul",
+                question: "Qual destes países não faz parte da América do Sul?",
+                options: ["Suriname", "Guiana", "Panamá", "Paraguai"],
+                correctAnswer: "Panamá",
+                explanation: "O Panamá está localizado na América Central.",
+                summary: "O Panamá situa-se na América Central, não sendo parte da América do Sul."
+            },
+            {
+                topic: "América do Sul",
+                question: "Qual é a língua oficial do Brasil?",
+                options: ["Espanhol", "Português", "Inglês", "Francês"],
+                correctAnswer: "Português",
+                explanation: "O Brasil é o único país das Américas que tem o português como língua oficial.",
+                summary: "O português é a língua oficial do Brasil, diferenciando-o de seus vizinhos sul-americanos."
+            },
+            // Aproveitamento dos Recursos Naturais
+            {
+                topic: "Aproveitamento dos Recursos Naturais",
+                question: "Qual recurso natural é fundamental para a produção de energia hidrelétrica?",
+                options: ["Petróleo", "Carvão", "Água", "Vento"],
+                correctAnswer: "Água",
+                explanation: "A energia hidrelétrica é gerada pelo movimento da água em barragens.",
+                summary: "A água é essencial para a geração de energia hidrelétrica, uma fonte renovável de energia."
+            },
+            {
+                topic: "Aproveitamento dos Recursos Naturais",
+                question: "A extração excessiva de madeira pode levar à:",
+                options: ["Desertificação", "Desmatamento", "Urbanização", "Industrialização"],
+                correctAnswer: "Desmatamento",
+                explanation: "A extração excessiva de madeira resulta no desmatamento das florestas.",
+                summary: "O desmatamento é causado pela retirada excessiva de árvores, afetando o ecossistema."
+            },
+            {
+                topic: "Aproveitamento dos Recursos Naturais",
+                question: "Qual fonte de energia é considerada renovável?",
+                options: ["Carvão", "Petróleo", "Gás Natural", "Solar"],
+                correctAnswer: "Solar",
+                explanation: "A energia solar é renovável e inesgotável, proveniente do sol.",
+                summary: "A energia solar é uma fonte renovável obtida através da luz do sol."
+            },
+            {
+                topic: "Aproveitamento dos Recursos Naturais",
+                question: "A pesca excessiva pode causar:",
+                options: ["Aumento da biodiversidade", "Esgotamento dos estoques pesqueiros", "Melhoria na qualidade da água", "Reflorestamento"],
+                correctAnswer: "Esgotamento dos estoques pesqueiros",
+                explanation: "A pesca excessiva diminui a população de peixes, levando ao esgotamento dos estoques.",
+                summary: "A pesca excessiva pode esgotar as populações de peixes, afetando a cadeia alimentar."
+            },
+            {
+                topic: "Aproveitamento dos Recursos Naturais",
+                question: "A agricultura sustentável busca:",
+                options: ["Maximizar lucros a curto prazo", "Utilizar agrotóxicos indiscriminadamente", "Conservar o solo e a água", "Destruir áreas florestais"],
+                correctAnswer: "Conservar o solo e a água",
+                explanation: "A agricultura sustentável visa preservar os recursos naturais para futuras gerações.",
+                summary: "A agricultura sustentável prioriza a conservação ambiental e o uso responsável dos recursos."
+            },
+            // Integração dos Países
+            {
+                topic: "Integração dos Países",
+                question: "Qual bloco econômico é formado por países da América do Sul, incluindo Brasil e Argentina?",
+                options: ["NAFTA", "União Europeia", "Mercosul", "ASEAN"],
+                correctAnswer: "Mercosul",
+                explanation: "O Mercosul é um bloco econômico que promove a integração econômica entre países sul-americanos.",
+                summary: "O Mercosul é um bloco econômico que une países da América do Sul para facilitar o comércio."
+            },
+            {
+                topic: "Integração dos Países",
+                question: "A globalização facilita:",
+                options: ["O isolamento cultural", "A integração econômica", "A diminuição do comércio", "A autossuficiência nacional"],
+                correctAnswer: "A integração econômica",
+                explanation: "A globalização promove a interdependência e integração entre as economias mundiais.",
+                summary: "A globalização conecta países economicamente, aumentando a interdependência global."
+            },
+            {
+                topic: "Integração dos Países",
+                question: "Qual é o principal objetivo da ONU?",
+                options: ["Promover guerras", "Estabelecer acordos comerciais", "Manter a paz e a segurança internacional", "Controlar mercados financeiros"],
+                correctAnswer: "Manter a paz e a segurança internacional",
+                explanation: "A ONU foi criada para promover a paz e a cooperação entre as nações.",
+                summary: "A ONU visa manter a paz mundial e promover a cooperação entre países."
+            },
+            {
+                topic: "Integração dos Países",
+                question: "O que significa a sigla BRICS?",
+                options: ["Brasil, Rússia, Índia, China e África do Sul", "Brasil, Romênia, Itália, Canadá e Suécia", "Bélgica, Rússia, Indonésia, Chile e Espanha", "Bolívia, República Dominicana, Irlanda, Colômbia e Suíça"],
+                correctAnswer: "Brasil, Rússia, Índia, China e África do Sul",
+                explanation: "BRICS é um grupo de países emergentes: Brasil, Rússia, Índia, China e África do Sul.",
+                summary: "BRICS é um grupo de países emergentes com economias em rápido crescimento."
+            },
+            {
+                topic: "Integração dos Países",
+                question: "A União Europeia é um exemplo de:",
+                options: ["Conflito internacional", "Bloco econômico", "Organização não governamental", "Aliança militar"],
+                correctAnswer: "Bloco econômico",
+                explanation: "A União Europeia é um bloco econômico e político formado por países europeus.",
+                summary: "A União Europeia é uma união política e econômica entre países da Europa."
+            },
+            // Brasil e sua Importância Regional
+            {
+                topic: "Brasil e sua Importância Regional",
+                question: "O Brasil faz fronteira com quase todos os países da América do Sul, exceto:",
+                options: ["Chile e Equador", "Uruguai e Paraguai", "Argentina e Bolívia", "Colômbia e Peru"],
+                correctAnswer: "Chile e Equador",
+                explanation: "Chile e Equador são os únicos países sul-americanos que não fazem fronteira com o Brasil.",
+                summary: "O Brasil faz fronteira com todos os países da América do Sul, exceto Chile e Equador."
+            },
+            {
+                topic: "Brasil e sua Importância Regional",
+                question: "Qual é a maior cidade do Brasil em população?",
+                options: ["Rio de Janeiro", "Brasília", "São Paulo", "Salvador"],
+                correctAnswer: "São Paulo",
+                explanation: "São Paulo é a cidade mais populosa do Brasil e uma das maiores do mundo.",
+                summary: "São Paulo é a maior metrópole brasileira, com grande influência econômica e cultural."
+            },
+            {
+                topic: "Brasil e sua Importância Regional",
+                question: "A Floresta Amazônica está principalmente localizada em qual país?",
+                options: ["Brasil", "Peru", "Venezuela", "Colômbia"],
+                correctAnswer: "Brasil",
+                explanation: "A maior parte da Floresta Amazônica está no território brasileiro.",
+                summary: "A Floresta Amazônica, a maior floresta tropical do mundo, está majoritariamente no Brasil."
+            },
+            {
+                topic: "Brasil e sua Importância Regional",
+                question: "Qual é a moeda oficial do Brasil?",
+                options: ["Peso", "Real", "Dólar", "Euro"],
+                correctAnswer: "Real",
+                explanation: "O Real é a moeda oficial do Brasil desde 1994.",
+                summary: "O Real é a moeda corrente no Brasil, instituída durante o Plano Real em 1994."
+            },
+            {
+                topic: "Brasil e sua Importância Regional",
+                question: "O Brasil é conhecido mundialmente por ser um grande produtor de:",
+                options: ["Tecnologia", "Petróleo", "Café", "Automóveis"],
+                correctAnswer: "Café",
+                explanation: "O Brasil é um dos maiores produtores e exportadores de café do mundo.",
+                summary: "O Brasil lidera a produção global de café, sendo um importante exportador."
+            }
+        ];
+
+        let remainingQuestions = [];
+        let userAnswers = [];
+        let displayedQuestions = [];
+
+        // Função para gerar uma pergunta aleatória sem repetir
+        function generateQuestion() {
+            if (remainingQuestions.length === 0) {
+                alert("Você já respondeu todas as perguntas disponíveis!");
+                return;
+            }
+
+            document.getElementById('question-container').style.display = 'block';
+            const questionArea = document.getElementById('question-area');
+            questionArea.innerHTML = '';
+
+            // Seleciona uma pergunta aleatória
+            const randomIndex = Math.floor(Math.random() * remainingQuestions.length);
+            const currentQuestion = remainingQuestions[randomIndex];
+
+            // Remove a pergunta do array de perguntas restantes
+            remainingQuestions.splice(randomIndex, 1);
+            displayedQuestions.push(currentQuestion);
+
+            // Cria o elemento da pergunta
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'question';
+
+            const questionTitle = document.createElement('h2');
+            questionTitle.textContent = currentQuestion.question;
+            questionDiv.appendChild(questionTitle);
+
+            // Cria as opções
+            const optionsDiv = document.createElement('div');
+            optionsDiv.className = 'options';
+
+            currentQuestion.options.forEach(option => {
+                const label = document.createElement('label');
+                const input = document.createElement('input');
+                input.type = 'radio';
+                input.name = 'option';
+                input.value = option;
+                label.appendChild(input);
+                label.appendChild(document.createTextNode(option));
+                optionsDiv.appendChild(label);
+            });
+
+            questionDiv.appendChild(optionsDiv);
+            questionArea.appendChild(questionDiv);
+
+            // Armazena a resposta do usuário
+            optionsDiv.addEventListener('change', function (e) {
+                userAnswers = userAnswers.filter(answer => answer.question !== currentQuestion.question);
+                userAnswers.push({
+                    question: currentQuestion.question,
+                    userAnswer: e.target.value,
+                    correctAnswer: currentQuestion.correctAnswer,
+                    explanation: currentQuestion.explanation,
+                    summary: currentQuestion.summary
+                });
+            });
+        }
+
+        // Função para finalizar o simulado e mostrar os resultados
+        function finishQuiz() {
+            if (userAnswers.length === 0) {
+                alert("Você não respondeu nenhuma pergunta!");
+                return;
+            }
+
+            document.getElementById('question-container').style.display = 'none';
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('summary-screen').style.display = 'none';
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '<h2>Resultado Final</h2>';
+
+            const correctAnswers = userAnswers.filter(answer => answer.userAnswer === answer.correctAnswer);
+            const incorrectAnswers = userAnswers.filter(answer => answer.userAnswer !== answer.correctAnswer);
+
+            resultsDiv.innerHTML += `<p>Questões corretas: ${correctAnswers.length}</p>`;
+            resultsDiv.innerHTML += `<p>Questões incorretas: ${incorrectAnswers.length}</p>`;
+
+            if (correctAnswers.length > 0) {
+                resultsDiv.innerHTML += '<h3 class="correct">Respostas Corretas:</h3>';
+                correctAnswers.forEach(answer => {
+                    resultsDiv.innerHTML += `<p>${answer.question}<br><strong>Sua resposta:</strong> ${answer.userAnswer}</p>`;
+                });
+            }
+
+            if (incorrectAnswers.length > 0) {
+                resultsDiv.innerHTML += '<h3 class="incorrect">Respostas Incorretas:</h3>';
+                incorrectAnswers.forEach(answer => {
+                    resultsDiv.innerHTML += `<p>${answer.question}<br><strong>Sua resposta:</strong> ${answer.userAnswer}<br><strong>Resposta correta:</strong> ${answer.correctAnswer}<br><span class="explanation"><strong>Explicação:</strong> ${answer.explanation}</span></p>`;
+                });
+            }
+
+            resultsDiv.innerHTML += '<button onclick="resetQuiz()">Reiniciar o Simulado</button>';
+        }
+
+        // Função para mostrar os resumos
+        function showSummaries() {
+            if (userAnswers.length === 0) {
+                alert("Você ainda não respondeu nenhuma pergunta!");
+                return;
+            }
+
+            document.getElementById('question-container').style.display = 'none';
+            document.getElementById('results').style.display = 'none';
+            document.getElementById('summary-screen').style.display = 'block';
+
+            const summaryContent = document.getElementById('summary-content');
+            summaryContent.innerHTML = '';
+
+            userAnswers.forEach(answer => {
+                const summaryDiv = document.createElement('div');
+                summaryDiv.className = 'question';
+
+                const questionTitle = document.createElement('h3');
+                questionTitle.textContent = answer.question;
+                summaryDiv.appendChild(questionTitle);
+
+                const summaryText = document.createElement('p');
+                summaryText.textContent = answer.summary;
+                summaryDiv.appendChild(summaryText);
+
+                summaryContent.appendChild(summaryDiv);
+            });
+        }
+
+        // Função para voltar à tela inicial
+        function goBack() {
+            document.getElementById('summary-screen').style.display = 'none';
+            document.getElementById('description').style.display = 'block';
+            document.getElementById('buttons').style.display = 'block';
+        }
+
+        // Função para resetar o simulado
+        function resetQuiz() {
+            remainingQuestions = [...allQuestions];
+            userAnswers = [];
+            displayedQuestions = [];
+            document.getElementById('question-container').style.display = 'none';
+            document.getElementById('results').style.display = 'none';
+            document.getElementById('summary-screen').style.display = 'none';
+            document.getElementById('question-area').innerHTML = '';
+            document.getElementById('summary-content').innerHTML = '';
+        }
+
+        // Eventos dos botões
+        document.getElementById('generate-btn').addEventListener('click', () => {
+            document.getElementById('description').style.display = 'none';
+            generateQuestion();
+        });
+        document.getElementById('finish-btn').addEventListener('click', finishQuiz);
+        document.getElementById('reset-btn').addEventListener('click', () => {
+            resetQuiz();
+            document.getElementById('description').style.display = 'block';
+        });
+        document.getElementById('summary-btn').addEventListener('click', showSummaries);
+        document.getElementById('back-btn').addEventListener('click', goBack);
+
+        // Inicializa o simulado
+        resetQuiz();
+    </script>
+</body>
+</html>
